@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Ultra - Premium Integration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="logo"><i class="fab fa-spotify"></i> Premium Player</div>
+        <a class="nav-item active"><i class="fas fa-home"></i> Home</a>
+        <a class="nav-item"><i class="fas fa-search"></i> Search</a>
+        <a class="nav-item"><i class="fas fa-layer-group"></i> Library</a>
+    </aside>
+
+    <main class="main-view">
+        <header>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search your library...">
+            </div>
+            <button
+                style="background: white; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Ahmad
+                Khan</button>
+        </header>
+
+        <section class="playlist-section">
+            <h2 style="margin-bottom: 20px; letter-spacing: -0.5px;">Recommended For You</h2>
+
+            <div class="embed-container">
+                <iframe title="Spotify Embed: Recommendation Playlist"
+                    src="https://open.spotify.com/embed/playlist/0Xp4X8X39WfoBeY2JAzmkc?utm_source=generator"
+                    width="100%" height="360" frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <section style="margin-top: 40px;">
+            <h3 style="margin-bottom: 15px;">Recently Played</h3>
+            <p style="color: var(--text-dim); font-size: 14px;">Your AI history will appear here as you play tracks.</p>
+        </section>
+    </main>
+
+    <footer class="player-bar">
+        <div class="current-track">
+            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=100" alt="MJ">
+            <div>
+                <h4 style="font-size: 14px;">They Don't Care About Us</h4>
+                <p style="font-size: 12px; color: var(--text-dim);">Michael Jackson</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="btn-row">
+                <i class="fas fa-step-backward" style="cursor: pointer;"></i>
+                <button class="main-play"><i class="fas fa-play"></i></button>
+                <i class="fas fa-step-forward" style="cursor: pointer;"></i>
+            </div>
+            <div style="width: 400px; height: 4px; background: #4f4f4f; border-radius: 2px; position: relative;">
+                <div style="width: 30%; height: 100%; background: white; border-radius: 2px;"></div>
+            </div>
+        </div>
+
+        <div style="width: 300px; display: flex; justify-content: flex-end; gap: 15px; color: var(--text-dim);">
+            <i class="fas fa-volume-up"></i>
+            <div style="width: 100px; height: 4px; background: #4f4f4f; border-radius: 2px; margin-top: 8px;"></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
