@@ -6,7 +6,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Ultra - Premium Integration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-black: #000000;
+            --sidebar-black: #121212;
+            --spotify-green: #1DB954;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #b3b3b3;
+            --card-hover: #282828;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            grid-template-rows: 1fr 90px;
+            height: 100vh;
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            background-color: var(--sidebar-black);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-right: 1px solid var(--glass-border);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--spotify-green);
+        }
+
+        .nav-item {
+            color: var(--text-dim);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            transition: 0.3s;
+            cursor: pointer;
+            padding: 8px 0;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: white;
+        }
+
+        /* --- MAIN VIEW --- */
+        .main-view {
+            background: linear-gradient(to bottom, #1e1e1e, #121212);
+            overflow-y: auto;
+            padding: 20px 40px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+        }
+
+        .search-container {
+            position: relative;
+            width: 350px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px 40px;
+            border-radius: 500px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            color: white;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            color: var(--text-dim);
+        }
+
+        /* --- THE PLAYLIST EMBED SECTION --- */
+        .playlist-section {
+            margin-top: 30px;
+        }
+
+        .embed-container {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+
+        .embed-container:hover {
+            border-color: var(--spotify-green);
+        }
+
+        /* --- PLAYER BAR --- */
+        .player-bar {
+            grid-column: 1 / -1;
+            background: #000;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .current-track {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 300px;
+        }
+
+        .current-track img {
+            width: 56px;
+            border-radius: 4px;
+        }
+
+        .controls {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .main-play {
+            width: 35px;
+            height: 35px;
+            background: white;
+            color: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,7 +208,7 @@
 
             <div class="embed-container">
                 <iframe title="Spotify Embed: Recommendation Playlist"
-                    src="https://open.spotify.com/embed/playlist/0Xp4X8X39WfoBeY2JAzmkc?utm_source=generator"
+                    src="https://open.spotify.com/embed/playlist/0Xp4X8X39WfoBeY2JAzmkc?utm_source=generator&theme=0"
                     width="100%" height="360" frameBorder="0"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
                 </iframe>
@@ -73,7 +247,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 
 </html>
